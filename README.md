@@ -70,10 +70,10 @@ src/
     ```
 
 4.  **Open the app**:
-    Visit [http://localhost:3000](http://localhost:3000) in your browser. 4.  **Open the app**:
+    Visit [http://localhost:3000](http://localhost:3000) in your browser. 
 
 5. **Live Link**:
-    Visit [https://cart-app-mz2n.vercel.app/] in your browser.   
+    Visit [https://cart-app-mz2n.vercel.app/](https://cart-app-mz2n.vercel.app/) in your browser.   
 
 ## 🎨 Design decisions
 
