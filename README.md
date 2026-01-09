@@ -2,9 +2,9 @@
 
 A modern, responsive e-commerce application built with Next.js and Tailwind CSS. This project features a dynamic product catalog with advanced filtering, real-time search, and a persistent shopping cart.
 
-![Project Preview](https://via.placeholder.com/800x400?text=Cart+System+Preview)
 
-## 🚀 Features
+
+##  Features
 
 -   **Product Listing**: Responsive grid layout that adapts to Mobile (1 col), Tablet (2 cols), and Desktop (3 cols).
 -   **Advanced Filtering**:
@@ -70,7 +70,10 @@ src/
     ```
 
 4.  **Open the app**:
-    Visit [http://localhost:3000](http://localhost:3000) in your browser.
+    Visit [http://localhost:3000](http://localhost:3000) in your browser. 4.  **Open the app**:
+
+5. **Live Link**:
+    Visit [https://cart-app-mz2n.vercel.app/] in your browser.   
 
 ## 🎨 Design decisions
 
