@@ -3,6 +3,10 @@
 
 import { useParams } from "next/navigation";
 import products from "@/data/products";
+// src/app/product/[id]/page.jsx
+import { useState } from "react";
+import { useCart } from "@/context/CartContext";
+
 
 export default function ProductDetailPage() {
     const { id } = useParams();
@@ -52,17 +56,25 @@ export default function ProductDetailPage() {
 
                 {/* Quantity Selector */}
                 <div className="flex items-center gap-4 mb-6">
-                    <label className="font-semibold">Quantity:</label>
+                    const [qty, setQty] = useState(1);
+                    const {addToCart} = useCart();
+
                     <input
                         type="number"
                         min="1"
-                        defaultValue="1"
+                        value={qty}
+                        onChange={e => setQty(Number(e.target.value))}
                         className="w-20 border rounded px-2 py-1"
                     />
+
+
                 </div>
 
                 {/* Add to Cart */}
-                <button className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700">
+                <button
+                    on Click={() => addToCart(product, qty)}
+                    className="w-full bg-blue-600 text-white py-3 rounded"
+                >
                     Add to Cart
                 </button>
             </div>
