@@ -53,7 +53,7 @@ src/
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/cart-system.git
+    git clone https://github.com/panwarvipul00/Cart-App
     cd cart-system
     ```
 
