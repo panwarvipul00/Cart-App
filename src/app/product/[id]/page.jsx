@@ -1,15 +1,16 @@
-// src/app/product/[id]/page.jsx
+
 "use client";
 
 import { useParams } from "next/navigation";
 import products from "@/data/products";
-// src/app/product/[id]/page.jsx
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 
 
 export default function ProductDetailPage() {
     const { id } = useParams();
+    const [qty, setQty] = useState(1);
+    const { addToCart } = useCart();
 
     const product = products.find(
         p => p.id === Number(id)
@@ -26,7 +27,7 @@ export default function ProductDetailPage() {
     return (
         <main className="p-6 flex flex-col md:flex-row gap-8">
 
-            {/* Image Section */}
+
             <div className="md:w-1/2 bg-white p-6 rounded shadow">
                 <img
                     src={product.image}
@@ -35,7 +36,7 @@ export default function ProductDetailPage() {
                 />
             </div>
 
-            {/* Details Section */}
+
             <div className="md:w-1/2 bg-white p-6 rounded shadow">
                 <h1 className="text-2xl font-bold mb-2">
                     {product.title}
@@ -54,11 +55,8 @@ export default function ProductDetailPage() {
                     {product.category}
                 </p>
 
-                {/* Quantity Selector */}
-                <div className="flex items-center gap-4 mb-6">
-                    const [qty, setQty] = useState(1);
-                    const {addToCart} = useCart();
 
+                <div className="flex items-center gap-4 mb-6">
                     <input
                         type="number"
                         min="1"
@@ -66,13 +64,11 @@ export default function ProductDetailPage() {
                         onChange={e => setQty(Number(e.target.value))}
                         className="w-20 border rounded px-2 py-1"
                     />
-
-
                 </div>
 
-                {/* Add to Cart */}
+
                 <button
-                    on Click={() => addToCart(product, qty)}
+                    onClick={() => addToCart(product, qty)}
                     className="w-full bg-blue-600 text-white py-3 rounded"
                 >
                     Add to Cart

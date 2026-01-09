@@ -1,4 +1,4 @@
-// src/components/ProductCard.jsx
+
 "use client";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
@@ -7,17 +7,23 @@ export default function ProductCard({ product }) {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-white p-4 rounded shadow">
-      <Link href={`/product/${product.id}`}>
-        <img src={product.image} className="h-40 w-full object-cover mb-3" />
-        <h3 className="font-semibold">{product.title}</h3>
+    <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+      <Link href={`/product/${product.id}`} className="block relative overflow-hidden rounded-lg mb-4">
+        <img
+          src={product.image}
+          className="h-48 w-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+          alt={product.title}
+        />
       </Link>
 
-      <p className="text-gray-600">${product.price}</p>
+      <div className="mb-4">
+        <h3 className="font-bold text-lg text-gray-900 mb-1 leading-tight">{product.title}</h3>
+        <p className="text-xl font-bold text-gray-900">${product.price}</p>
+      </div>
 
       <button
         onClick={() => addToCart(product)}
-        className="mt-3 w-full bg-blue-600 text-white py-2 rounded"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2"
       >
         Add to Cart
       </button>

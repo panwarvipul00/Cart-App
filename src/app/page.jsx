@@ -1,4 +1,4 @@
-// src/app/page.jsx
+
 import Sidebar from "@/components/Sidebar";
 import ProductGrid from "@/components/ProductGrid";
 

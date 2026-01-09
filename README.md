@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WhatBytes Cart System
 
-## Getting Started
+A modern, responsive e-commerce application built with Next.js and Tailwind CSS. This project features a dynamic product catalog with advanced filtering, real-time search, and a persistent shopping cart.
 
-First, run the development server:
+![Project Preview](https://via.placeholder.com/800x400?text=Cart+System+Preview)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+-   **Product Listing**: Responsive grid layout that adapts to Mobile (1 col), Tablet (2 cols), and Desktop (3 cols).
+-   **Advanced Filtering**:
+    -   Filter by Category (Electronics, Clothing, Home, etc.).
+    -   Filter by Price Range using a dynamic slider.
+-   **Real-time Search**: Instant product search via the sticky navbar.
+-   **Shopping Cart**:
+    -   Add products with customizable quantities.
+    -   Persistent cart state (localStorage).
+    -   Real-time total calculation.
+-   **Product Details**: Dedicated page for each product with high-quality images and descriptions.
+-   **Responsive Design**:
+    -   Sticky Navbar for easy navigation.
+    -   Sticky Sidebar for accessible filters on scrolling.
+    -   Sticky Footer with social media integration.
+
+## 🛠️ Tech Stack
+
+-   **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **State Management**: React Context API (`CartContext`)
+
+## 📂 Project Structure
+
+```
+src/
+├── app/
+│   ├── cart/           # Cart page
+│   ├── product/[id]/   # Product Detail page
+│   ├── layout.tsx      # Root layout (Metadata, Fonts)
+│   └── page.jsx        # Homepage (Product Grid + Sidebar)
+├── components/
+│   ├── Header.jsx      # Sticky Navbar (Search, Cart Link)
+│   ├── Footer.jsx      # Sticky Footer (Socials, Links)
+│   ├── Sidebar.jsx     # Filter Controls
+│   ├── ProductGrid.jsx # Main Product Display
+│   └── ProductCard.jsx # Individual Product Component
+├── context/
+│   └── CartContext.jsx # Global Cart State Management
+└── data/
+    └── products.js     # Mock Data Source
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-username/cart-system.git
+    cd cart-system
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-## Learn More
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Open the app**:
+    Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design decisions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   **Theme**: Deep Blue (`#001f3f`) primary theme for a professional, trusted look.
+-   **UX**:
+    -   **Sticky Elements**: Kept Search and Filters always compatible with scrolling for better UX on long lists.
+    -   **Hover Effects**: Cards scale slightly on hover to indicate interactivity.
+    -   **Images**: Used `object-cover` to ensure product images look consistent regardless of their original aspect ratio.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
