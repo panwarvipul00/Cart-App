@@ -54,7 +54,7 @@ src/
 1.  **Clone the repository**:
     ```bash
     git clone https://github.com/panwarvipul00/Cart-App
-    cd cart-system
+    cd cart-app
     ```
 
 2.  **Install dependencies**:
